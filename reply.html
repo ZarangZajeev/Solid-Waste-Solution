@@ -1,0 +1,52 @@
+{% extends 'Admin/AdminHomePage.html' %}
+{% block content %}
+
+</style>
+<body>
+
+
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:612px;
+	top:131px;
+	width:969px;
+	height:260px;
+	z-index:1;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="Layer1">
+<form method="post">{% csrf_token %}
+
+
+   </textarea>
+
+
+
+    <table width="200" border="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><label for="fname">Complaint Reply</label></td>
+        <td><textarea id="fname" rows="10" cols="50" name="TxtReply"></textarea></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td> <input type="submit" value="Submit"></td>
+    </tr>
+  </table>
+
+  </form>
+</div>
+{% endblock %}
+</body>
+</html>
+
+

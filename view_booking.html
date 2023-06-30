@@ -1,0 +1,58 @@
+{% extends 'Agency/AgencyHome1.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+</head>
+<br><br><br><br><br>
+
+<center><h2>View Booking </h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">User</div></th>
+        <th class="header-item items"><div align="center">Booking Date</div></th>
+        <th class="header-item items"><div align="center">Booking Item</div></th>
+        <th class="header-item items"><div align="center">Quantity</div></th>
+        <th class="header-item items"><div align="center">Total Ammount</div></th>
+        <th class="header-item items"><div align="center">Agency</div></th>
+
+
+
+
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+      <td class="items"><div align="center">{{ row.9 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.4}}</div></td>
+      <td class="items"><div align="center">{{ row.5 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.7}}</div></td>
+
+
+
+
+
+
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'Agency/AgencyHome1.html' %}
+{% block content %}
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+<br><br><br><br><br>
+<center><h2>View Driver </h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">Name</div></th>
+        <th class="header-item items"><div align="center">Licence_no</div></th>
+        <th class="header-item items"><div align="center">Address</div></th>
+        <th class="header-item items"><div align="center">Email</div></th>
+        <th class="header-item items"><div align="center">Driver id</div></th>
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.3}}</div></td>
+      <td class="items"><div align="center">{{ row.4 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.6}}</div></td>
+      <td width="80"><div align="center" ><a href="/delete_driver/{{ row.0 }}">Delete</a></div></td>
+       <td width="80"><div align="center" ><a href="/edit_driver/{{ row.0 }}">Edit</a></div></td>
+
+
+
+
+
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+{% endblock %}

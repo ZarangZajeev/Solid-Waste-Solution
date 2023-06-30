@@ -1,0 +1,22 @@
+{% extends 'Admin/AdminHomePage1.html' %}
+{% block content %}
+
+<body>
+
+<h3>Edit catgory</h3>
+
+<div>
+  <form  method="post">{% csrf_token %}
+    <td>name</td>
+    <input type="text" name="category_name" placeholder="add category name" ">
+
+
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+{% endblock %}
+</body>
+</html>
+
+

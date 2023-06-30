@@ -1,0 +1,50 @@
+{% extends 'Admin/AdminHomePage1.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+</head>
+
+<h2>View agency {{ request.session.count }} </h2>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">Name</div></th>
+        <th class="header-item items"><div align="center">Address</div></th>
+        <th class="header-item items"><div align="center">Phone</div></th>
+        <th class="header-item items"><div align="center">Email</div></th>
+        <th class="header-item items"><div align="center">Password</div></th>
+
+
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+            <td class="items" height="87"><div align="center">{{ row.3}}</div></td>
+      <td class="items"><div align="center">{{ row.4 }}</div></td>
+            <td class="items" height="87"><div align="center">{{ row.5}}</div></td>
+
+
+      <td class="items" width="80"><div align="center" ><a href="/approveagency/{{ row.0 }}">APPROVE</a></div></td>
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+{% endblock %}

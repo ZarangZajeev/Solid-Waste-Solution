@@ -1,0 +1,89 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        * {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+}
+body {
+  display: flex;
+  background-color: #2b3137;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  background: white;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 60vh;
+  border-radius: 10px;
+}
+.header {
+  padding: 30px 0 30px 0;
+  text-align: center;
+}
+.header h1 {
+  font-size: 21px;
+}
+.input_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-content: center;
+  text-align: center;
+}
+.input_area input {
+  /* width: 100%; */
+  margin: 10px 0;
+  border: 1px grey solid;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+  outline: none;
+  color: grey;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.actions {
+  text-align: center;
+  padding: 30px 0 10px 0;
+}
+.actions button {
+  background-color: #1aebb6;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+.actions p {
+  font-size: 13px;
+}
+.Sign_up_link {
+  font-weight: 500;
+  color: #14b397;
+  text-decoration: none;
+}
+
+    </style>
+</head>
+<form id="form1" name="form1" method="post" action="/login1">
+         {% csrf_token %}
+<div class="container">
+  <div class="header">
+    <h1>Login</h1>
+  </div>
+  <div class="input_area">
+    <input type="text" name = "un" placeholder="Username" />
+    <input type="password"  name = "pass"placeholder="Password" />
+  </div>
+  <div class="actions">
+    <button type="submit" value="Login">Login</button>
+  </div>
+</div>
+</form>
+</html>

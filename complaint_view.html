@@ -1,0 +1,45 @@
+{% extends 'Agency/AgencyHome1.html' %}
+{% block content %}
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+<div style="min-height:60vh;"><br><br><br><br><br>
+
+
+<h2><div align="center">View Complaint</div></h2><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">User id</div></th>
+        <th class="header-item items"><div align="center">Complaint date</div></th>
+        <th class="header-item items"><div align="center">Details</div></th>
+        <th class="header-item items"><div align="center">Reply</div></th>
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+      <td class="items" height="87"><div align="center">{{ row.3}}</div></td>
+      <td class="items"><div align="center">{{ row.4}}</div></td>
+
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+    </div>
+{% endblock %}
