@@ -1,0 +1,48 @@
+{% extends 'Agency/AgencyHome1.html' %}
+{% block content %}
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+
+<br><br><br><br><br><br>
+
+
+
+<h2><div align="center">View Category </div></h2><br>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">Category Name</div></th>
+<!--        <th class="header-item items">licence_no</th>-->
+<!--        <th class="header-item items">address</th>-->
+<!--        <th class="header-item items">email</th>-->
+<!--        <th class="header-item items">driver_id</th>-->
+
+
+
+
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+           <td width="80"><div align="center" ><a href="/set_ammount_details/{{ row.0 }}">Assign</a></div></td>
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+{% endblock %}

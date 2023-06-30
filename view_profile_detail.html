@@ -1,0 +1,50 @@
+{% extends 'Agency/AgencyHome1.html' %}
+{% block content %}
+
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+<div style="min-height:80vh;"><br><br><br><br><br><br>
+
+<center><h2>View agency </h2></center><br><br>
+<table>
+    <tr>
+        <th class="header-item items">name</th>
+        <th class="header-item items">adress</th>
+        <th class="header-item items">phone</th>
+        <th class="header-item items">email</th>
+
+
+
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ row.1 }}</div></td>
+      <td class="items"><div align="center">{{ row.2 }}</div></td>
+            <td class="items" height="87"><div align="center">{{ row.3}}</div></td>
+      <td class="items"><div align="center">{{ row.4 }}</div></td>
+      <td class="items" width="80"><div align="center" ><a href="/view_profile_edit/{{row.0}}">Edit</a></div></td>
+
+
+
+
+        {% endfor %}
+        </tr>
+</table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'Admin/AdminHomePage1.html' %}
+{% block content %}
+<head>
+    <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: coral;}
+    </style>
+</head>
+<p>&nbsp;</p>
+<h2> </h2>
+<p>&nbsp;</p>
+<h2><div align="center">View All category</div></h2>
+<br/>
+<table>
+    <tr>
+        <th class="header-item items"><div align="center">Sl.No</div></th>
+        <th class="header-item items"><div align="center">Category</div></th>
+
+
+        <th></th>
+    </tr>
+    {% for row in data %}
+
+  <tr>
+      <td class="items" height="87"><div align="center">{{ forloop.counter }}</div></td>
+      <td class="items"><div align="center">{{ row.1 }}</div></td>
+
+      <td class="items" width="80"><div align="center" ><a href="/editCategory/{{ row.0 }}">Edit</a></div></td>
+      <td class="items" width="80"><div align="center" ><a href="/deleteCategory/{{ row.0 }}">Delete</a></div></td>
+
+        {% endfor %}
+        </tr>
+
+
+</table>
+{% endblock %}
